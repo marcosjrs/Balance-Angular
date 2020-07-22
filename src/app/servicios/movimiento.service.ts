@@ -74,4 +74,41 @@ export class MovimientoService {
 
   }
 
+
+  creaRetirada(todo: Movimiento) {
+    this.http.post<Movimiento>(`${this.baseUrl}/retirada`, JSON.stringify(todo)).subscribe(data => {
+      this.dataStore.retiradas.push(data);
+      this.retiradas.next(Object.assign({}, this.dataStore).retiradas);
+      this.establecerCalculos();
+    }, error => console.log('No se pudo crear la retirada'));
+  }
+
+  eliminarRetirada(id: number) {
+    this.http.delete(`${this.baseUrl}/retirada/${id}`).subscribe(response => {
+      this.dataStore.retiradas.forEach((t, i) => {
+        if (t.id === id) { this.dataStore.retiradas.splice(i, 1); }
+      });
+      this.retiradas.next(Object.assign({}, this.dataStore).retiradas);
+      this.establecerCalculos();
+    }, error => console.log('No se pudo borrar la retirada'));
+  }
+
+  creaIngreso(todo: Movimiento) {
+    this.http.post<Movimiento>(`${this.baseUrl}/ingreso`, JSON.stringify(todo)).subscribe(data => {
+      this.dataStore.ingresos.push(data);
+      this.ingresos.next(Object.assign({}, this.dataStore).ingresos);
+      this.establecerCalculos();
+    }, error => console.log('No se pudo crear el ingreso'));
+  }
+
+  eliminarIngreso(id: number) {
+    this.http.delete(`${this.baseUrl}/ingreso/${id}`).subscribe(response => {
+      this.dataStore.ingresos.forEach((t, i) => {
+        if (t.id === id) { this.dataStore.ingresos.splice(i, 1); }
+      });
+      this.ingresos.next(Object.assign({}, this.dataStore).ingresos);
+      this.establecerCalculos();
+    }, error => console.log('No se pudo borrar el ingreso'));
+  }
+
 }

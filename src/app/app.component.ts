@@ -3,6 +3,7 @@ import { Ingreso } from './modelos/ingreso.model';
 import { Retirada } from './modelos/retirada.model';
 import { MovimientoService } from './servicios/movimiento.service';
 import { Observable } from 'rxjs';
+import { Movimiento } from './modelos/movimiento.model';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,21 @@ export class AppComponent implements OnInit {
     this.porcentajeDisponible$ = this.movimientosSvc.porcentajeDisponible$;
     this.movimientosSvc.cargarTodo();
 
+  }
+
+  eliminarRetirada(id: number) {
+    this.movimientosSvc.eliminarRetirada(id);
+  }
+
+  crearRetirada(movimiento: Movimiento) {
+    this.movimientosSvc.creaRetirada(movimiento);
+  }
+
+  eliminarIngreso(id: number) {
+    this.movimientosSvc.eliminarIngreso(id);
+  }
+  crearIngreso(movimiento: Movimiento) {
+    this.movimientosSvc.creaIngreso(movimiento);
   }
 
 

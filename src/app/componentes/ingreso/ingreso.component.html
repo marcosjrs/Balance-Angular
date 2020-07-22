@@ -7,7 +7,7 @@
     <div class="right limpiarEstilos">
       <div class="elemento_valor">+ {{ingreso.cantidad}}</div>
       <div class="elemento_eliminar">
-        <button class="elemento_eliminar--btn">
+        <button class="elemento_eliminar--btn" (click)="eliminar($event, ingreso.id)">
           <i class="ion-ios-close-outline"></i>
         </button>
       </div>

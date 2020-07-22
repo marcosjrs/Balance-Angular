@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Retirada } from 'src/app/modelos/retirada.model';
 import { Observable } from 'rxjs';
+import { Movimiento } from 'src/app/modelos/movimiento.model';
 
 @Component({
   selector: 'app-retirada',
@@ -9,11 +10,17 @@ import { Observable } from 'rxjs';
 })
 export class RetiradaComponent implements OnInit {
   @Input()
-  retiradas:Observable<Retirada[]>;
+  retiradas: Observable<Retirada[]>;
+  @Output()
+  eliminarRetirada = new EventEmitter<Number>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  eliminar($event, id) {
+    this.eliminarRetirada.emit(id);
   }
 
 }

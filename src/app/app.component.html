@@ -3,6 +3,6 @@
 <app-formulario-movimiento></app-formulario-movimiento>
 
 <div class="contenedor limpiarEstilos">
-  <app-ingreso [ingresos]="ingresos$"></app-ingreso>
-  <app-retirada [retiradas]="retiradas$"></app-retirada>
+  <app-ingreso [ingresos]="ingresos$" (eliminarIngreso)="eliminarIngreso($event)" ></app-ingreso>
+  <app-retirada [retiradas]="retiradas$"  (eliminarRetirada)="eliminarRetirada($event)"></app-retirada>
 </div>

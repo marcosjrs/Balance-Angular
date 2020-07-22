@@ -6,7 +6,7 @@
     <div class="right limpiarEstilos">
       <div class="elemento_valor">- {{retirada.cantidad}}</div>
       <div class="elemento_eliminar">
-        <button class="elemento_eliminar--btn"><i class="ion-ios-close-outline"></i></button>
+        <button class="elemento_eliminar--btn"  (click)="eliminar($event, retirada.id)"><i class="ion-ios-close-outline"></i></button>
       </div>
     </div>
   </div>
