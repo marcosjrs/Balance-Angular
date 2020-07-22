@@ -1,6 +1,6 @@
 <app-cabecera [disponible]="disponible$" [totalIngresos]="totalIngresos$" [totalRetiradas]="totalRetiradas$" [porcentajeDisponible]="porcentajeDisponible$"></app-cabecera>
 
-<app-formulario-movimiento></app-formulario-movimiento>
+<app-formulario-movimiento (crearIngreso)="crearIngreso($event)" (crearRetirada)="crearRetirada($event)"></app-formulario-movimiento>
 
 <div class="contenedor limpiarEstilos">
   <app-ingreso [ingresos]="ingresos$" (eliminarIngreso)="eliminarIngreso($event)" ></app-ingreso>

@@ -75,8 +75,9 @@ export class MovimientoService {
   }
 
 
-  creaRetirada(todo: Movimiento) {
-    this.http.post<Movimiento>(`${this.baseUrl}/retirada`, JSON.stringify(todo)).subscribe(data => {
+  creaRetirada(movimiento: Movimiento) {
+    //this.http.post<Movimiento>(`${this.baseUrl}/retirada`, JSON.stringify(movimiento)).subscribe(data => {
+    this.http.post<Movimiento>(`${this.baseUrl}/retirada`, {"concepto": movimiento.concepto, "cantidad": movimiento.cantidad, "id": null} ).subscribe(data => {
       this.dataStore.retiradas.push(data);
       this.retiradas.next(Object.assign({}, this.dataStore).retiradas);
       this.establecerCalculos();
@@ -93,8 +94,9 @@ export class MovimientoService {
     }, error => console.log('No se pudo borrar la retirada'));
   }
 
-  creaIngreso(todo: Movimiento) {
-    this.http.post<Movimiento>(`${this.baseUrl}/ingreso`, JSON.stringify(todo)).subscribe(data => {
+  creaIngreso(movimiento: Movimiento) {
+    //this.http.post<Movimiento>(`${this.baseUrl}/ingreso`, JSON.stringify(movimiento)).subscribe(data => {
+    this.http.post<Movimiento>(`${this.baseUrl}/ingreso`, {"concepto": movimiento.concepto, "cantidad": movimiento.cantidad, "id": null}).subscribe(data => {
       this.dataStore.ingresos.push(data);
       this.ingresos.next(Object.assign({}, this.dataStore).ingresos);
       this.establecerCalculos();
