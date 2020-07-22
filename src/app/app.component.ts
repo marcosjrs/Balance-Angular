@@ -12,6 +12,10 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
   ingresos$: Observable<Ingreso[]>;
   retiradas$: Observable<Retirada[]>;
+  totalIngresos$: Observable<Number>;
+  totalRetiradas$: Observable<Number>;
+  disponible$: Observable<Number>;
+  porcentajeDisponible$: Observable<Number>;
 
   constructor(private movimientosSvc: MovimientoService) {
   }
@@ -19,6 +23,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.ingresos$ = this.movimientosSvc.ingresos$;
     this.retiradas$ = this.movimientosSvc.retiradas$;
+    this.totalIngresos$ = this.movimientosSvc.totalIngresos$;
+    this.totalRetiradas$ = this.movimientosSvc.totalRetiradas$;
+    this.disponible$ = this.movimientosSvc.disponible$;
+    this.porcentajeDisponible$ = this.movimientosSvc.porcentajeDisponible$;
     this.movimientosSvc.cargarTodo();
 
   }
