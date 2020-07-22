@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Ingreso } from 'src/app/modelos/ingreso.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ingreso',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingreso.component.css']
 })
 export class IngresoComponent implements OnInit {
+
+  @Input()
+  ingresos:Observable<Ingreso[]>;
 
   constructor() { }
 
