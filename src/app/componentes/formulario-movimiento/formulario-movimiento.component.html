@@ -2,11 +2,11 @@
   <div class="agregar">
       <div class="agregar_contenedor">
           <select class="agregar_tipo" #tipo>
-              <option value="ingreso" selected>+</option>
-              <option value="retirada">-</option>
+              <option value="ingreso" selected>Ingreso</option>
+              <option value="retirada">Retirada</option>
           </select>
           <input type="text" class="agregar_descripcion" placeholder="Descripción" #concepto>
-          <input type="number" class="agregar_valor" placeholder="Valor" #cantidad>
+          <input type="number" min="0" class="agregar_valor" placeholder="Valor" #cantidad>
           <button class="agregar_btn" (click)="crear(tipo.value, concepto.value, cantidad.value)"><i class="icon ion-plus-circled"></i></button>
       </div>
   </div>

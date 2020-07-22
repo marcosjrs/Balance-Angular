@@ -20,7 +20,7 @@ export class FormularioMovimientoComponent implements OnInit {
 
   crear(tipo: string, concepto: string, cantidad:string) {
     if(tipo && concepto && cantidad){
-      const movimiento = new Movimiento(concepto, parseInt(cantidad));
+      const movimiento = new Movimiento(concepto, parseFloat(cantidad));
       if (tipo === "retirada") {
         this.crearRetirada.emit(movimiento);
       } else {
