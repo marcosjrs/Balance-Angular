@@ -7,6 +7,9 @@ import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { RetiradaComponent } from './componentes/retirada/retirada.component';
 import { FormularioMovimientoComponent } from './componentes/formulario-movimiento/formulario-movimiento.component';
 
+import { IngresoService } from './servicios/ingreso.service';
+import { RetiradaService } from './servicios/retirada.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,7 @@ import { FormularioMovimientoComponent } from './componentes/formulario-movimien
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [IngresoService, RetiradaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
