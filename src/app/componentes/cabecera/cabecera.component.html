@@ -1,15 +1,15 @@
 <div class="cabecera">
   <div class="presupuesto">
       <div class="presupuesto_titulo">
-          Presupuesto Disponible:
+        Disponible:
       </div>
 
-      <div class="presupuesto_valor">+ {{ disponible | async}}</div>
+      <div class="presupuesto_valor">+ {{ disponible | async | number : '1.2-2'}} €</div>
 
       <div class="presupuesto_ingreso limpiarEstilos">
           <div class="presupuesto_ingreso--texto">Ingresos</div>
           <div class="right">
-              <div class="presupuesto_ingreso--valor">+ {{totalIngresos | async}}</div>
+              <div class="presupuesto_ingreso--valor">+ {{totalIngresos | async | number : '1.2-2'}} €</div>
               <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
           </div>
       </div>
@@ -17,7 +17,7 @@
       <div class="presupuesto_retirada limpiarEstilos">
           <div class="presupuesto_retirada--text">retiradas</div>
           <div class="right limpiarEstilos">
-              <div class="presupuesto_retirada--valor">- {{totalRetiradas | async}}</div>
+              <div class="presupuesto_retirada--valor">- {{totalRetiradas | async | number : '1.2-2'}} €</div>
               <div class="presupuesto_retirada--porcentaje">{{porcentajeDisponible | async | number : '1.2-2'}} %</div>
           </div>
       </div>
