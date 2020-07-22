@@ -1,28 +1,4 @@
-<div class="cabecera">
-  <div class="presupuesto">
-      <div class="presupuesto_titulo">
-          Presupuesto Disponible:
-      </div>
-
-      <div class="presupuesto_valor">+ 2,345.64</div>
-
-      <div class="presupuesto_ingreso limpiarEstilos">
-          <div class="presupuesto_ingreso--texto">Ingresos</div>
-          <div class="right">
-              <div class="presupuesto_ingreso--valor">+ 4,300.00</div>
-              <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
-          </div>
-      </div>
-
-      <div class="presupuesto_retirada limpiarEstilos">
-          <div class="presupuesto_retirada--text">retiradas</div>
-          <div class="right limpiarEstilos">
-              <div class="presupuesto_retirada--valor">- 1,954.36</div>
-              <div class="presupuesto_retirada--porcentaje">45%</div>
-          </div>
-      </div>
-  </div>
-</div>
+<app-cabecera></app-cabecera>
 
 
 
@@ -42,62 +18,6 @@
 
 
   <div class="contenedor limpiarEstilos">
-      <div class="ingreso">
-          <h2 class="ingreso_titulo">Ingresos</h2>
-
-
-              <div class="elemento limpiarEstilos">
-                  <div class="elemento_descripcion">Salario</div>
-                  <div class="right limpiarEstilos">
-                      <div class="elemento_valor">+ 2,100.00</div>
-                      <div class="elemento_eliminar">
-                          <button class="elemento_eliminar--btn">
-                              <i class="ion-ios-close-outline"></i>
-                          </button>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="elemento limpiarEstilos">
-                  <div class="elemento_descripcion">Venta coche</div>
-                  <div class="right limpiarEstilos">
-                      <div class="elemento_valor">+ 1,500.00</div>
-                      <div class="elemento_eliminar">
-                          <button class="elemento_eliminar--btn"><i class="ion-ios-close-outline"></i></button>
-                      </div>
-                  </div>
-              </div>
-
-      </div>
-
-
-
-      <div class="retirada">
-          <h2 class="retirada_titulo">retiradas</h2>
-
-
-              <div class="elemento limpiarEstilos" >
-                  <div class="elemento_descripcion">Renta departamento</div>
-                  <div class="right limpiarEstilos">
-                      <div class="elemento_valor">- 900.00</div>
-                      <div class="elemento_porcentaje">21%</div>
-                      <div class="elemento_eliminar">
-                          <button class="elemento_eliminar--btn"><i class="ion-ios-close-outline"></i></button>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="elemento limpiarEstilos" >
-                  <div class="elemento_descripcion">Ropa</div>
-                  <div class="right limpiarEstilos">
-                      <div class="elemento_valor">- 435.28</div>
-                      <div class="elemento_porcentaje">10%</div>
-                      <div class="elemento_eliminar">
-                          <button class="elemento_eliminar--btn"><i class="ion-ios-close-outline"></i></button>
-                      </div>
-                  </div>
-              </div>
-
-
-      </div>
+      <app-ingreso></app-ingreso>
+      <app-retirada></app-retirada>
   </div>
